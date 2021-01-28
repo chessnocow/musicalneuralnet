@@ -4,7 +4,7 @@ from pathlib import Path
 import random
 from tqdm import tqdm
 
-
+HOME_DIR = '/content/musicalneuralnet'
 
 
 def change_rests(filestr):
@@ -186,10 +186,10 @@ if __name__ == "__main__":
     parser.set_defaults(sample=1)
     args = parser.parse_args()
 
-    TARGET_TRAIN=Path('./data/train')
-    TARGET_TEST=Path('./data/test')
-    EXAMPLE_TRAIN=Path('./data/example_data/train')
-    EXAMPLE_TEST=Path('./data/example_data/test')
+    TARGET_TRAIN=Path(HOME_DIR+'/data/train')
+    TARGET_TEST=Path(HOME_DIR+'/data/test')
+    EXAMPLE_TRAIN=Path(HOME_DIR+'/data/example_data/train')
+    EXAMPLE_TEST=Path(HOME_DIR+'/data/example_data/test')
     
     if args.example:
         example(TARGET_TRAIN,TARGET_TEST,EXAMPLE_TRAIN,EXAMPLE_TEST)
@@ -202,7 +202,7 @@ if __name__ == "__main__":
         sample_freq='sample_freq4' if args.chordwise else 'sample_freq12'
     else:
         sample_freq='sample_freq'+str(args.sample_freq)
-    SOURCE=Path('./data/composers/')
+    SOURCE=Path(HOME_DIR+'/data/composers/')
     SOURCE=SOURCE/encoding/ensemble/note_range/sample_freq
     print(SOURCE)
     
