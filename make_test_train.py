@@ -186,8 +186,8 @@ if __name__ == "__main__":
     parser.set_defaults(sample=1)
     args = parser.parse_args()
 
-    TARGET_TRAIN=Path(HOME_DIR+'/data/train')
-    TARGET_TEST=Path(HOME_DIR+'/data/test')
+    TARGET_TRAIN=Path('./data/train')
+    TARGET_TEST=Path('./data/test')
     EXAMPLE_TRAIN=Path(HOME_DIR+'/data/example_data/train')
     EXAMPLE_TEST=Path(HOME_DIR+'/data/example_data/test')
     
